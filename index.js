@@ -28,5 +28,18 @@ app.get(`/api/persons`, (request, response) => {
     response.json(persons);
 })
 
+app.get(`/info/`, (request, response) => {
+    
+    const weekday = ["Sun","Mon","Tue","Wed","Thurs","Fri","Sat"];
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
+    let date = new Date();
+    let day = weekday[date.getDay()];
+    response.send(`<div>
+        <p>Phonebook has info for ${persons.length} people. </p>
+        <p>${day} ${months[date.getMonth()]} ${date.getDate()} ${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}</p>
+        </div>`);
+    
+})
+
 const PORT = 3001;
 app.listen(PORT);
