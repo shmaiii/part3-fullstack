@@ -1,6 +1,11 @@
 const express = require('express');
 const app = express();
 
+const cors = require('cors');
+app.use(cors());
+
+app.use(express.json()); // for POST requests
+
 var morgan = require('morgan');
 app.use(morgan('tiny'));
 
@@ -75,6 +80,7 @@ const generateId = () => {
 
 app.post(`/api/persons`, (request, response) => {
     const body = request.body;
+    console.log(body);
 
     if (!body.name || !body.number){
         return response.status(400).json({

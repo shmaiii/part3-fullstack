@@ -1,12 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Persons from './components/Person.js';
 import PersonForm from './components/PersonForm.js';
+import axios from 'axios';
 
 
 const App = () => {
   const [persons, setPersons] = useState([
     { name: 'Arto Hellas', number: '040-123456'}
   ]);
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:3001/api/persons')
+      .then(response => {
+        console.log(response);
+        setPersons(response.data);
+      })
+  }, []);
 
   return (
     <div>
