@@ -5,9 +5,7 @@ import axios from 'axios';
 
 
 const App = () => {
-  const [persons, setPersons] = useState([
-    { name: 'Arto Hellas', number: '040-123456'}
-  ]);
+  const [persons, setPersons] = useState([]);
 
   useEffect(() => {
     axios
@@ -24,7 +22,7 @@ const App = () => {
       <h3>Ass a new</h3>
       <PersonForm persons={persons} setPersons={setPersons} />
       <h2>Numbers</h2>
-      <Persons persons={persons} />   
+      <Persons persons={persons} setPersons={setPersons} />   
     </div>
   );
 }
