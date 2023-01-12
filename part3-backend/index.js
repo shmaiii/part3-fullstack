@@ -1,13 +1,15 @@
 const express = require('express');
 const app = express();
-
 const cors = require('cors');
+
+//middleware
 app.use(cors());
-
 app.use(express.json()); // for POST requests
+app.use(express.static('build'));
 
-var morgan = require('morgan');
-app.use(morgan('tiny'));
+// Comment this part for deployment
+// var morgan = require('morgan');
+// app.use(morgan('tiny'));
 
 let persons = [
     { 
@@ -105,5 +107,7 @@ app.post(`/api/persons`, (request, response) => {
 })
 
 
-const PORT = 3001;
-app.listen(PORT);
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});

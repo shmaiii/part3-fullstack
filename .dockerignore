@@ -1,0 +1,25 @@
+# flyctl launch added from phonebook_p2_frontend\.gitignore
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+phonebook_p2_frontend\node_modules
+phonebook_p2_frontend\.pnp
+phonebook_p2_frontend\**\.pnp.js
+
+# testing
+phonebook_p2_frontend\coverage
+
+# production
+phonebook_p2_frontend\build
+
+# misc
+phonebook_p2_frontend\**\.DS_Store
+phonebook_p2_frontend\**\.env.local
+phonebook_p2_frontend\**\.env.development.local
+phonebook_p2_frontend\**\.env.test.local
+phonebook_p2_frontend\**\.env.production.local
+
+phonebook_p2_frontend\**\npm-debug.log*
+phonebook_p2_frontend\**\yarn-debug.log*
+phonebook_p2_frontend\**\yarn-error.log*
+fly.toml

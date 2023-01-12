@@ -6,7 +6,7 @@ const Person = (props) => {
   const deleteEntry = () => {
     var id = props.person.id;
     axios
-      .delete(`http://localhost:3001/api/persons/${id}`)
+      .delete(`/api/persons/${id}`)
       .then( response => {
         props.setPersons(props.persons.filter(person => person.id !== id));
       })

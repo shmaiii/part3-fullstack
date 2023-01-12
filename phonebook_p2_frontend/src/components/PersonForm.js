@@ -14,7 +14,7 @@ const PersonForm = (props) => {
 
         const personObject = {name: newName, number: newNumber};
         axios
-        .post(`http://localhost:3001/api/persons`, personObject)
+        .post(`/api/persons`, personObject)
         .then(response => {
           console.log(response);
           props.setPersons(props.persons.concat(personObject));
