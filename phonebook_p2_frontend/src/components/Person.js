@@ -3,17 +3,19 @@ import axios from 'axios';
 import { useEffect } from "react";
 
 const Person = (props) => {
+
   const deleteEntry = () => {
-    var id = props.person.id;
+    var id = props.person._id;
+    console.log(id);
     axios
       .delete(`/api/persons/${id}`)
       .then( response => {
-        props.setPersons(props.persons.filter(person => person.id !== id));
+        props.setPersons(props.persons.filter(person => person._id !== id));
       })
   }
     return (
       <div>
-        {props.person.name} {props.person.number}
+        {props.person.id} {props.person.name} {props.person.number}
         <button onClick={deleteEntry}>Delete</button>
       </div>
     );
