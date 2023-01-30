@@ -1,2 +1,2 @@
 # PHONEBOOK
-A fullstack application for learning the MERN stack and deployment
+A fullstack phonebook application made to learn about the MERN stack and deployment
